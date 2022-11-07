@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookey</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="icons/book-icon.svg" alt="logo">
+        <h1>Bookey</h1>
+        <button>Add Book +</button>
+    </header>
+    <section class="book-form">
+        <div class="request-card">
+            <form action="">
+                <label for="book-title">Book title:</label>
+                <input type="text" id="book-title">
+                <label for="author">Author:</label>
+                <input type="text" id="author">
+                <label for="num-pages">Number of Pages:</label>
+                <input type="number" id="num-pages">
+                <div>
+                    <span>Have you read this book</span>
+                    <label for="read-book">YES</label>
+                    <input type="radio" id="readbook" value="Yes">
+                    <label for="read-book">NO</label>
+                    <input type="radio" id="readbook" value="Yes">
+                </div>
+                
+            </form>
+        </div>
+    </section>
+    <section class="container">
+        <div class="books-container">
+            <div class="book card">
+                <h2>Book Title:<span class="answer">Alex's Great Book</span></h2>
+                <span>Author:<span class="answer">Alex's Great Book</span></span>
+                <span class="pages">Number of pages:<span class="answer">69420</span></span>
+                <button class="read-button">Read</button>
+            </div>
+        </div>
+    </section>
+    <script src="js/app.js"></script>
+</body>
+</html>
