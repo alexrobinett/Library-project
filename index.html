@@ -14,11 +14,11 @@
     <header>
         <img class="logo" src="icons/book-icon.svg" alt="logo">
         <h1>Bookey</h1>
-        <button>Add Book +</button>
+        <button id="Addbook">Add Book +</button>
     </header>
     <section class="book-form hidden">
         <div class="request-card" >
-            <form action="">
+            <form class="book-input" action="">
                 <div class="question-container-1">
                     <label for="book-title">Book title:</label>
                     <input type="text" id="booktitle">
@@ -34,13 +34,13 @@
                 <div class="question-container-4"> 
                     <span>Have you read this book?</span>
                     <label for="read-book">YES</label>
-                    <input type="radio" id="readbook" value="true">
-                    <label for="read-book">NO</label>
-                    <input type="radio" id="readbook" value="false">
+                    <input type="radio" id="readbook" name="read-unread" value="read-button" required>
+                    <label for="read-book-no">NO</label>
+                    <input type="radio" id="readbook-no" name="read-unread" value="unread-button" required>
                 </div>
                 <div class="button-container">
                     <button class="add-book">Add Book</button>
-                    <button class="cancel">cancel</button>
+                    <button type="button" class="cancel">cancel</button>
                  </div>
             </form>
         </div>
