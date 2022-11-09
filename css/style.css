@@ -99,14 +99,26 @@ h2,span{
 }
 .unread-button{
     background-color: rgb(227, 130, 130);
-    place-self: center;
+    height: 35px;
+    width: 30;
+    margin: 10px;
 }
 
 .read-button{
     background-color: rgb(139, 237, 139);
-    place-self: center;
     height: 35px;
+    width: 30;
     
+}
+.button-container-book{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.remove-book{
+    height: 35px;
+    width: 30;
+    margin: 10px;
 }
 
 span{

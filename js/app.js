@@ -70,13 +70,19 @@ function displayBooks(){
        Booktemplate.dataset.num = i
        Booktemplate.classList.add("card")
        Booktemplate.classList.add("book")
-       Booktemplate.innerHTML = `<h2>Book Title:<span class="answer">${myLibrary[i].title}</span></h2><span>Author:<span class="answer">${myLibrary[i].author}</span></span><span class="pages">Number of pages:<span class="answer">${myLibrary[i].numberOfPages}</span></span><button class="${myLibrary[i].isRead}">Read</button>`;
+       Booktemplate.innerHTML = `<h2>Book Title:<span class="answer">${myLibrary[i].title}</span></h2><span>Author:<span class="answer">${myLibrary[i].author}</span></span><span class="pages">Number of pages:<span class="answer">${myLibrary[i].numberOfPages}</span></span><div><button class="${myLibrary[i].isRead}">Read</button><button class="remove-book">remove</button></div>`;
        BookContainer[0].appendChild(Booktemplate)
     }
 }
+
+function DeleteBook(id){
+    let bookToRemove = document.querySelector("id")
+}
+
 
 BookFormBtn.addEventListener("click", toggleinputCard)
 
 cancelButton.addEventListener("click", toggleinputCard)
 
 AddBookBtn.addEventListener("click", addBookToLibrary, false)
+
