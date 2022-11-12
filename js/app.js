@@ -4,6 +4,7 @@ const AddBookBtn = document.querySelector(".add-book")
 const BookInput = document.querySelector(".book-input")
 
 
+
 let myLibrary = []
 
 
@@ -16,7 +17,7 @@ function Book(bookTitle, bookAuthor, bookPages, isBookRead){
 }
 
 
-// get Radio button answer 
+// gets Radio button answer 
 function displayRadioValue() {
     let ele = document.getElementsByName('read-unread');
       
@@ -26,12 +27,14 @@ function displayRadioValue() {
         }
 }
 
+// Resets all books in DOM Before a Rerender
 function resetCards(parent) {
             while (parent.firstChild) {
                 parent.removeChild(parent.firstChild);
             }
 }
 
+// Clears form Data
 function clearInputs(){
     const inputs = document.querySelectorAll('#booktitle, #author, #numpages');
 
@@ -40,6 +43,7 @@ function clearInputs(){
     })
 }
 
+// Hides form input
 function toggleinputCard(){
     document.querySelector(".book-form").classList.toggle("hidden")
 }
@@ -57,28 +61,28 @@ function addBookToLibrary(event){
     displayBooks()
     BookInput.reset()
     toggleinputCard()
-
-
 }
 
 
+//loops through myLibrary Array and puts books in DOM
 
 function displayBooks(){
     const BookContainer = document.getElementsByClassName("books-container")
+    resetCards(document.querySelector(".books-container"))
     for(let i = 0; i < myLibrary.length; i++){
        const Booktemplate = document.createElement("div")
        Booktemplate.dataset.num = i
        Booktemplate.classList.add("card")
        Booktemplate.classList.add("book")
-       Booktemplate.innerHTML = `<h2>Book Title:<span class="answer">${myLibrary[i].title}</span></h2><span>Author:<span class="answer">${myLibrary[i].author}</span></span><span class="pages">Number of pages:<span class="answer">${myLibrary[i].numberOfPages}</span></span><div><button class="${myLibrary[i].isRead}">Read</button><button class="remove-book">remove</button></div>`;
+       Booktemplate.innerHTML = `<h2>Book Title:<span class="answer">${myLibrary[i].title}</span></h2><span>Author:<span class="answer">${myLibrary[i].author}</span></span><span class="pages">Number of pages:<span class="answer">${myLibrary[i].numberOfPages}</span></span><div><button class="${myLibrary[i].isRead}">isRead</button><button id="${i}" class="remove-book">remove</button></div>`;
        BookContainer[0].appendChild(Booktemplate)
+      
     }
+    addDeleteBtn()
 }
 
-function DeleteBook(id){
-    let bookToRemove = document.querySelector("id")
-}
 
+// Event Listeners
 
 BookFormBtn.addEventListener("click", toggleinputCard)
 
@@ -86,3 +90,16 @@ cancelButton.addEventListener("click", toggleinputCard)
 
 AddBookBtn.addEventListener("click", addBookToLibrary, false)
 
+// Adds Delete button and updates myLibrary Array
+function addDeleteBtn(){
+    const deleteBookButton = document.querySelectorAll(".remove-book");
+
+    deleteBookButton.forEach((card)=> card.addEventListener("click",function(e){
+        myLibrary.splice(e.target.id,1)
+        displayBooks()
+    } ))
+}
+
+function toggleBookReadStatus(){
+    
+}
