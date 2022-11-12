@@ -97,17 +97,19 @@ h1{
 h2,span{
     grid-column: 1/2;
 }
-.unread-button{
+.unread{
     background-color: rgb(227, 130, 130);
     height: 35px;
     width: 30;
-    margin: 10px;
+    margin: 10px 20px 10px 20px;
+    
 }
 
-.read-button{
+.read{
     background-color: rgb(139, 237, 139);
     height: 35px;
     width: 30;
+    margin: 10px 20px 10px 20px;
     
 }
 .button-container-book{

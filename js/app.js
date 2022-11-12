@@ -74,11 +74,12 @@ function displayBooks(){
        Booktemplate.dataset.num = i
        Booktemplate.classList.add("card")
        Booktemplate.classList.add("book")
-       Booktemplate.innerHTML = `<h2>Book Title:<span class="answer">${myLibrary[i].title}</span></h2><span>Author:<span class="answer">${myLibrary[i].author}</span></span><span class="pages">Number of pages:<span class="answer">${myLibrary[i].numberOfPages}</span></span><div><button class="${myLibrary[i].isRead}">isRead</button><button id="${i}" class="remove-book">remove</button></div>`;
+       Booktemplate.innerHTML = `<h2>Book Title:<span class="answer">${myLibrary[i].title}</span></h2><span>Author:<span class="answer">${myLibrary[i].author}</span></span><span class="pages">Number of pages:<span class="answer">${myLibrary[i].numberOfPages}</span></span><div><button data-id="${i}" data-read="${myLibrary[i].isRead}" class="${myLibrary[i].isRead} book-status">${myLibrary[i].isRead}</button><button id="${i}" class="remove-book">remove</button></div>`;
        BookContainer[0].appendChild(Booktemplate)
       
     }
     addDeleteBtn()
+    toggleBookReadStatus()
 }
 
 
@@ -101,5 +102,25 @@ function addDeleteBtn(){
 }
 
 function toggleBookReadStatus(){
-    
+    let booksStatusButton = document.querySelectorAll(".book-status")
+
+    booksStatusButton.forEach((card)=> card.addEventListener("click", function(e){
+        console.log("status button is working")
+        console.log(e.target.dataset.id)
+        if(e.target.dataset.read === "read"){
+            console.log("button is still read")
+            e.target.dataset.read = "unread"
+            e.target.classList.remove("read")
+            e.target.classList.add("unread")
+            e.target.textContent = "unread"
+            myLibrary[e.target.dataset.id].isRead = "unread"
+        }else if (e.target.dataset.read === "unread"){
+            console.log("button is still unread")
+            e.target.dataset.read = "read"
+            e.target.classList.remove("unread")
+            e.target.classList.add("read")
+            e.target.textContent = "read"
+            myLibrary[e.target.dataset.id].isRead = "read"
+        }else console.log("something went wrong")
+    }))
 }
