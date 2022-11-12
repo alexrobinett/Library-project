@@ -83,14 +83,6 @@ function displayBooks(){
 }
 
 
-// Event Listeners
-
-BookFormBtn.addEventListener("click", toggleinputCard)
-
-cancelButton.addEventListener("click", toggleinputCard)
-
-AddBookBtn.addEventListener("click", addBookToLibrary, false)
-
 // Adds Delete button and updates myLibrary Array
 function addDeleteBtn(){
     const deleteBookButton = document.querySelectorAll(".remove-book");
@@ -101,6 +93,7 @@ function addDeleteBtn(){
     } ))
 }
 
+// Book Read Status Toggle
 function toggleBookReadStatus(){
     let booksStatusButton = document.querySelectorAll(".book-status")
 
@@ -124,3 +117,11 @@ function toggleBookReadStatus(){
         }else console.log("something went wrong")
     }))
 }
+
+// Event Listeners
+
+BookFormBtn.addEventListener("click", toggleinputCard)
+
+cancelButton.addEventListener("click", toggleinputCard)
+
+AddBookBtn.addEventListener("click", addBookToLibrary, false)
