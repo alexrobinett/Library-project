@@ -1,2 +1,2 @@
 # Library-project
-project demonstrating Javascript inhaertance and OOP
+Project Demonstrating Javascript inhaertance and OOP
