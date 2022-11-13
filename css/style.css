@@ -38,7 +38,7 @@ z-index: 2;
 }
 
 .books-container{
-    background-color: rgb(204, 215, 223);
+    background-color: rgb(204, 214, 222);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
